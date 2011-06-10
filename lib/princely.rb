@@ -64,6 +64,9 @@ class Princely
     # as input and output
     path << ' --silent - -o -'
     
+    # Add max memory size and cpu time
+    path = "sh -c 'ulimit -m 51200 -t 40; #{path}'"
+    
     # Show the command used...
     logger.info "\n\nPRINCE XML PDF COMMAND"
     logger.info path
